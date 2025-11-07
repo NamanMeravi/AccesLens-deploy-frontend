@@ -8,6 +8,8 @@
  import Navbar from './components/Navbar.jsx'
  import VerifyEmail from './pages/VerifyEmail.jsx'
  import CreateProject from './pages/CreateProject.jsx'
+import ProfileUpdate from './pages/ProfileUpdate.jsx'
+import PrivateRoute from '../utils/PrivateRoute.jsx'
  const App = () => {
    return (
     <div className='bg-zinc-950 min-h-screen text-white'>
@@ -20,6 +22,9 @@
        <Route path="/create-project" element={<CreateProject />} />
        <Route path="/profile" element={<Profile />} />
        <Route path="/verify-email" element={<VerifyEmail />} />
+       <Route path="/profile-update" element={ <PrivateRoute>
+        <ProfileUpdate/>
+       </PrivateRoute>} />
       
      </Routes>
     </div>
